@@ -1,29 +1,29 @@
 import React from 'react'
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
+import { StyleSheet,Text,View,TouchableOpacity } from 'react-native'
 import NavigationBar from '@/components/NavigationBar'
 import { useNavigation } from '@react-navigation/native';
 import Iconfont from '@/iconfont'
 
-export default function NormalNavBar({titleStyle={},title,style,backColor,statusBar={},needGoBack=false}) {
+export default function NormalNavBar({ titleStyle = {},title,style,backColor,statusBar = {},needGoBack = false }) {
   const navigation = useNavigation()
   const leftButton = (
-      <TouchableOpacity onPress={()=>navigation.goBack()} style={s.leftButton}>
-        <Iconfont size={18} color={backColor||'black'} name={'back'} />
-      </TouchableOpacity>
+    <TouchableOpacity onPress={() => navigation.goBack()} style={s.leftButton}>
+      <Iconfont size={18} color={backColor || 'black'} name={'back'} />
+    </TouchableOpacity>
   )
   const headerProps = {
-    statusBar:{
-      backgroundColor:"white",
+    statusBar: {
+      backgroundColor: "white",
       ...statusBar
     },
     title,
     titleStyle,
-    style:{
+    style: {
       ...s.defaultStyle,
-      ...style
+      ...style,
     }
   }
-  if(needGoBack){
+  if (needGoBack) {
     headerProps.leftButton = leftButton
   }
 
@@ -35,13 +35,13 @@ export default function NormalNavBar({titleStyle={},title,style,backColor,status
 }
 
 const s = StyleSheet.create({
-  leftButton:{
+  leftButton: {
     // borderWidth: 1,
     // borderColor:'red',
     // flex:1,
-    padding:15
+    padding: 15
   },
-  defaultStyle:{
+  defaultStyle: {
     backgroundColor: '#fff',
     borderBottomWidth: 1,
     borderBottomColor: '#eee',

@@ -1,12 +1,12 @@
-import React, {Component} from 'react';
-import { NAV_BAR_HEIGHT, STATUS_BAR_HEIGHT } from '@/utils/adapter'
-import { ViewPropTypes, Text, StatusBar, StyleSheet, View, Platform, DeviceInfo} from 'react-native';
-import {PropTypes} from 'prop-types';
+import React,{ Component } from 'react';
+import { NAV_BAR_HEIGHT,STATUS_BAR_HEIGHT } from '@/utils/adapter'
+import { ViewPropTypes,Text,StatusBar,StyleSheet,View,Platform,DeviceInfo } from 'react-native';
+import { PropTypes } from 'prop-types';
 
 
 
 const StatusBarShape = {//设置状态栏所接受的属性
-    barStyle: PropTypes.oneOf(['light-content', 'default','dark-content']),
+    barStyle: PropTypes.oneOf(['light-content','default','dark-content']),
     hidden: PropTypes.bool,
     backgroundColor: PropTypes.string,
 };
@@ -31,7 +31,7 @@ export default class NavigationBar extends Component {
             // barStyle: 'dark-content',
             hidden: false,
         },
-        layoutLinearGradientProps:{}
+        layoutLinearGradientProps: {}
     };
 
     render() {
@@ -46,13 +46,13 @@ export default class NavigationBar extends Component {
         let content = this.props.hide ? null :
             <View style={styles.navBar}>
                 {this.getButtonElement(this.props.leftButton)}
-                <View style={[styles.navBarTitleContainer, this.props.titleLayoutStyle]}>
+                <View style={[styles.navBarTitleContainer,this.props.titleLayoutStyle]}>
                     {titleView}
                 </View>
                 {this.getButtonElement(this.props.rightButton)}
             </View>;
         return (
-            <View {...this.props.layoutLinearGradientProps} style={[styles.container, this.props.style]}>
+            <View {...this.props.layoutLinearGradientProps} style={[styles.container,this.props.style]}>
                 {statusBar}
                 {content}
             </View>
@@ -73,6 +73,8 @@ const styles = StyleSheet.create({
         backgroundColor: 'transparent',
         // borderWidth: 1,
         // borderColor:'red',
+
+        // backgroundColor: '#222633'
     },
     navBarButton: {
         alignItems: 'center',
@@ -82,6 +84,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'space-between',
         height: NAV_BAR_HEIGHT,
+        // backgroundColor: 'red'
     },
     navBarTitleContainer: {
         alignItems: 'center',

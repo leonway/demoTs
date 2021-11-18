@@ -13,23 +13,7 @@ import Init from '@/containers/Init';
 // 首页 展馆 会展通 消息 我的
 import Main from '@/containers/Main';
 // // 首页 项目中心
-import ProjectCenter from '@/containers/Main/Home/ProjectCenter'
-// // 首页 项目中心 订单详情
-// import OrderDetails from '../pages/Main/Home/ProjectCenter/OrderDetails'
-// // 首页 项目中心 项目进度
-// import ProjectSteps from '../pages/Main/Home/ProjectCenter/ProjectSteps'
-// // 首页 项目中心 更新服务进度（上传服务图片）
-// import UpdateProgress from '../pages/Main/Home/ProjectCenter/UpdateProgress'
-
-// // 我的 所有项目
-// import AllProject from '../pages/Main/My/AllProject'
-// // 首页 所有项目 订单详情
-// import AllOrderDetails from '../pages/Main/My/AllProject/OrderDetails'
-// // 首页 所有项目 项目进度
-// import AllProjectSteps from '../pages/Main/My/AllProject/ProjectSteps'
-// // 首页 所有项目 更新服务进度（上传服务图片）
-// import AllUpdateProgress from '../pages/Main/My/AllProject/UpdateProgress'
-
+import Home from '@/containers/Main/Home'
 // 登陆 注册页
 import Login from '@/containers/Login';
 
@@ -98,7 +82,7 @@ const Root = (componentProps) => {
   // }
   return (
     <View style={s.container}>
-      <StatusBar backgroundColor="#fff" barStyle="dark-content" />
+      <StatusBar backgroundColor="#222633" />
       <NavigationContainer
         ref={navigationRef}
         onStateChange={async (route) => { }}
@@ -119,9 +103,8 @@ const Root = (componentProps) => {
           }}>
           <>
             {/* <Stack.Screen name="init" component={Init} /> */}
-            <Stack.Screen name="main" component={Main} />
             {/* 首页 项目中心 */}
-            <Stack.Screen name="projectCenter" component={ProjectCenter} />
+            <Stack.Screen name="home" component={Home} />
             {/* <Stack.Screen name="orderDetails" component={OrderDetails} />
                   <Stack.Screen name="projectSteps" component={ProjectSteps} />
                   <Stack.Screen name="updateProgress" component={UpdateProgress} /> */}
